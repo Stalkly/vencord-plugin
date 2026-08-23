@@ -204,7 +204,7 @@ async function apiFetch<T>(path: string, params?: Record<string, string | number
         let code: string | undefined;
         try {
             const body = await res.json();
-            code = body?.error ?? body?.code;
+            code = body?.reason ?? body?.code;
         } catch { }
         throw new StalklyApiError(res.status, code);
     }
