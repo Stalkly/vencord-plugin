@@ -1,0 +1,425 @@
+.vc-stalkly-card {
+    margin-top: 8px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background: oklab(0.298136 0.00109468 -0.00903386);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.vc-stalkly-card--sidebar {
+    margin-top: 12px;
+    margin-inline: 16px;
+}
+
+.vc-stalkly-card--tab {
+    margin-top: 0;
+}
+
+.vc-stalkly-tab {
+    flex: 1 1 auto;
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 16px;
+    overflow-y: auto;
+    height: 100%;
+}
+
+.vc-stalkly-tab,
+.vc-stalkly-timeline,
+.vc-stalkly-guilds {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
+}
+
+.vc-stalkly-tab::-webkit-scrollbar,
+.vc-stalkly-timeline::-webkit-scrollbar,
+.vc-stalkly-guilds::-webkit-scrollbar {
+    width: 8px;
+}
+
+.vc-stalkly-tab::-webkit-scrollbar-track,
+.vc-stalkly-timeline::-webkit-scrollbar-track,
+.vc-stalkly-guilds::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.vc-stalkly-tab::-webkit-scrollbar-thumb,
+.vc-stalkly-timeline::-webkit-scrollbar-thumb,
+.vc-stalkly-guilds::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+}
+
+.vc-stalkly-tab::-webkit-scrollbar-thumb:hover,
+.vc-stalkly-timeline::-webkit-scrollbar-thumb:hover,
+.vc-stalkly-guilds::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.28);
+}
+
+.vc-stalkly-tab .vc-stalkly-card {
+    margin-top: 0;
+}
+
+.vc-stalkly-modal-tab-bar {
+    gap: 0;
+}
+
+.vc-stalkly-modal-tab-bar-v2 {
+    --space-xl: 16px;
+}
+
+.vc-stalkly-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.vc-stalkly-title {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.vc-stalkly-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #80848e;
+}
+
+.vc-stalkly-dot-online { background: #23a55a; }
+.vc-stalkly-dot-idle { background: #f0b232; }
+.vc-stalkly-dot-dnd { background: #f23f42; }
+
+.vc-stalkly-muted {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.vc-stalkly-loading {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.vc-stalkly-activity-row {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.vc-stalkly-activity-value {
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.92);
+}
+
+.vc-stalkly-activity-devices {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: capitalize;
+}
+
+.vc-stalkly-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+    margin-top: 2px;
+}
+
+.vc-stalkly-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.vc-stalkly-stat-value {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.92);
+}
+
+.vc-stalkly-stat-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.vc-stalkly-badges {
+    display: flex;
+    gap: 6px;
+    margin-top: 2px;
+}
+
+.vc-stalkly-badge {
+    width: 18px;
+    height: 18px;
+}
+
+.vc-stalkly-guilds {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    max-height: 168px;
+    overflow-y: auto;
+    margin-top: 4px;
+    padding-top: 6px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.vc-stalkly-guild-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 2px 0;
+}
+
+.vc-stalkly-guild-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+
+.vc-stalkly-guild-icon-fallback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.12);
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.vc-stalkly-guild-info {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    flex: 1;
+}
+
+.vc-stalkly-guild-name {
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.92);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.vc-stalkly-guild-stats {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.vc-stalkly-section {
+    margin-top: 12px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background: oklab(0.298136 0.00109468 -0.00903386);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.vc-stalkly-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.vc-stalkly-section-title {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.vc-stalkly-chart-toggle {
+    display: flex;
+    gap: 4px;
+}
+
+.vc-stalkly-toggle-btn {
+    font: inherit;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: none;
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+}
+
+.vc-stalkly-toggle-btn-active {
+    background: rgba(255, 255, 255, 0.18);
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.vc-stalkly-chart-legend {
+    display: flex;
+    gap: 12px;
+}
+
+.vc-stalkly-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.vc-stalkly-legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.vc-stalkly-legend-dot-msgs { background: #5865f2; }
+.vc-stalkly-legend-dot-voice { background: #eb459e; }
+
+.vc-stalkly-chart-svg {
+    display: block;
+    overflow: visible;
+}
+
+.vc-stalkly-chart-line {
+    fill: none;
+    stroke-width: 1.5;
+    vector-effect: non-scaling-stroke;
+}
+
+.vc-stalkly-chart-line-msgs { stroke: #5865f2; }
+.vc-stalkly-chart-line-voice { stroke: #eb459e; }
+
+.vc-stalkly-chart-axis {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.vc-stalkly-table {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.vc-stalkly-table-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.vc-stalkly-row-icon {
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+
+.vc-stalkly-row-icon-round {
+    border-radius: 50%;
+}
+
+.vc-stalkly-row-icon-fallback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.12);
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.vc-stalkly-row-info {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    flex: 1;
+}
+
+.vc-stalkly-row-name {
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.92);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.vc-stalkly-row-sub {
+    font-size: 10.5px;
+    color: rgba(255, 255, 255, 0.5);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.vc-stalkly-row-stats {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    font-size: 11px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.75);
+    flex-shrink: 0;
+    min-width: 56px;
+}
+
+.vc-stalkly-lastseen {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.vc-stalkly-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 260px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.vc-stalkly-timeline-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.vc-stalkly-timeline-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    background: #80848e;
+}
+
+.vc-stalkly-evt-join { background: #23a55a; }
+.vc-stalkly-evt-leave { background: #f23f42; }
+.vc-stalkly-evt-move { background: #5865f2; }
+.vc-stalkly-evt-idle { background: #f0b232; }
+.vc-stalkly-evt-default { background: #80848e; }
+
+.vc-stalkly-table-row-clickable {
+    cursor: pointer;
+    border-radius: 6px;
+    margin: -4px;
+    padding: 4px;
+}
+
+.vc-stalkly-table-row-clickable:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
