@@ -1,4 +1,30 @@
+import { showNotification } from "@api/Notifications";
 import type { SyntheticEvent } from "react";
+
+import { STALKLY_ORIGIN } from "./api";
+
+let cspRequestInFlight: Promise<void> | null = null;
+
+export function ensureStalklyCspAllowed(): Promise<void> {
+    if (!IS_DISCORD_DESKTOP && !IS_VESKTOP) return Promise.resolve();
+
+    return cspRequestInFlight ??= (async () => {
+        try {
+            const alreadyAllowed = await VencordNative.csp.isDomainAllowed(STALKLY_ORIGIN, ["connect-src"]);
+            if (alreadyAllowed) return;
+
+            const result = await VencordNative.csp.requestAddOverride(STALKLY_ORIGIN, ["connect-src"], "StalklyProfile");
+            if (result === "ok") {
+                showNotification({
+                    title: "StalklyProfile",
+                    body: "stalkly.me was allowed. Restart Discord for stats to start loading.",
+                });
+            }
+        } finally {
+            cspRequestInFlight = null;
+        }
+    })();
+}
 
 export function formatRelativeTime(iso: string): string {
     const diffSec = Math.floor((Date.now() - new Date(iso).getTime()) / 1000);

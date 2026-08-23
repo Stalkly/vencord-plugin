@@ -1,6 +1,7 @@
 import { settings } from "./settings";
 
-const API_BASE = "https://stalkly.me/api/public/v1";
+export const STALKLY_ORIGIN = "https://stalkly.me";
+const API_BASE = `${STALKLY_ORIGIN}/api/public/v1`;
 const CACHE_TTL_MS = 60_000;
 
 export type StalklyRange = "day" | "week" | "month" | "all";

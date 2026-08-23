@@ -11,7 +11,7 @@ const STALKLY_SECTION_ADDED = Symbol("StalklyProfile.SectionAdded");
 import { getStalklyProfile, StalklyApiError } from "./api";
 import StalklyDetailSections from "./DetailedTab";
 import { settings } from "./settings";
-import { formatRelativeTime, hideOnError } from "./utils";
+import { ensureStalklyCspAllowed, formatRelativeTime, hideOnError } from "./utils";
 
 type CardVariant = "popout" | "sidebar" | "tab";
 
@@ -147,6 +147,10 @@ export default definePlugin({
     authors: [{ name: "emirhan", id: 0n }],
 
     settings,
+
+    start() {
+        if (settings.store.apiKey?.trim()) ensureStalklyCspAllowed();
+    },
 
     patches: [
         {
