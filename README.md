@@ -104,6 +104,8 @@ If you're actively editing the plugin's source, you don't even need to re-run th
 
 ---
 
+Plugin Developer: https://github.com/xrenata
+
 ## 📄 License
 
 GPL-3.0-or-later, matching Vencord's own license.
